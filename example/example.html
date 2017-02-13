@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Knockout Component Preview Example</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- jquery -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		
+		<!-- bootstrap -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<!-- knockout -->
+		<script src="../src/knockout-3.4.1.js"></script>
+		
+		<!-- knockout-component-preview -->
+		<script src="../src/knockout-OwlCarousel-2.js"></script>
+		
+		<!-- owl carousel -->
+		<script src="owl.carousel.min.js"></script>
+		<link rel="stylesheet" href="owl.theme.default.min.css" />
+		<link rel="stylesheet" href="owl.carousel.min.css" />
+		
+		<style>
+.owl-item {
+    display: inline-block;
+    float: left;
+}
+		</style>
+	</head>
+	<body>
+		<div id="test">
+			<div id="awesome"
+				class="owl-carousel owl-theme" style="display:block;"
+				data-bind="foreach: {
+					data: myItems,
+					afterAdd: afterAddTest,
+					beforeRemove: forEachRemove
+				}, addUniqueID: containerID">
+					<div data-bind="click: clickEvent, text: name, attr: { 'data-id': uniqueItemID() }"></div>
+			</div>
+		 
+			<button data-bind="click: addItem">Add Slide</button>
+			<button data-bind="click: removeItem">Remove Slide</button>
+		</div>
+	
+		
+	</body>
+</html>
